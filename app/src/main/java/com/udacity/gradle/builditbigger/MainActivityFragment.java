@@ -5,11 +5,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.udacity.gradle.jokes.Joker;
 
 
 /**
@@ -25,8 +23,8 @@ public class MainActivityFragment extends Fragment {
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
 
-        Joker joker = new Joker();
-        Toast.makeText(getActivity(), joker.getJoke(), Toast.LENGTH_SHORT).show();
+        // Joker joker = new Joker();
+        // Toast.makeText(getActivity(), joker.getJoke(), Toast.LENGTH_SHORT).show();
 
         AdView mAdView = (AdView) root.findViewById(R.id.adView);
         // Create an ad request. Check logcat output for the hashed device ID to
