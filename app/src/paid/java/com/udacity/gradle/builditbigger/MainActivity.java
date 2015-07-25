@@ -7,6 +7,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -19,11 +20,14 @@ import java.io.IOException;
 
 
 public class MainActivity extends ActionBarActivity {
+    private ProgressBar spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        spinner = (ProgressBar) findViewById(R.id.progressBar);
+        spinner.setVisibility(View.GONE);
     }
 
 
@@ -53,6 +57,7 @@ public class MainActivity extends ActionBarActivity {
         // Response to button click
         // Start Async endpoint request
         new EndpointsAsyncTask().execute();
+        spinner.setVisibility(View.VISIBLE);
     }
 
     private void launchJokeActivity(String string) {
@@ -97,6 +102,7 @@ public class MainActivity extends ActionBarActivity {
         @Override
         protected void onPostExecute(String result) {
             launchJokeActivity(result);
+            spinner.setVisibility(View.GONE);
         }
     }
 }
