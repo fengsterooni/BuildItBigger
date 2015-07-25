@@ -7,15 +7,42 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
+import com.google.android.gms.ads.doubleclick.PublisherInterstitialAd;
+
 
 public class MainActivity extends ActionBarActivity {
+
+    PublisherInterstitialAd mPublisherInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mPublisherInterstitialAd = new PublisherInterstitialAd(this);
+        mPublisherInterstitialAd.setAdUnitId("/6499/example/interstitial");
+
+        mPublisherInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                requestNewInterstitial();
+                showJoke();
+            }
+        });
+
+        requestNewInterstitial();
     }
 
+
+    private void requestNewInterstitial() {
+        PublisherAdRequest adRequest = new PublisherAdRequest.Builder()
+                .addTestDevice("FB2228B04C5DA1A2CC885C1F66272BBF")
+                .build();
+
+        mPublisherInterstitialAd.loadAd(adRequest);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -40,6 +67,14 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void tellJoke(View view) {
+        if (mPublisherInterstitialAd.isLoaded()) {
+            mPublisherInterstitialAd.show();
+        } else {
+            showJoke();
+        }
+    }
+
+    public void showJoke() {
         Toast.makeText(this, getString(R.string.joke), Toast.LENGTH_SHORT).show();
     }
 }
