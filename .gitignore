@@ -31,6 +31,8 @@ proguard-project.txt
 build/**
 app/build/**
 backend/build/**
+javaJokes/build/**
+jokeactivity/build/**
 app/.idea/**
 .idea/**
 import-summary.txt
