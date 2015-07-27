@@ -14,14 +14,6 @@
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:theme="@android:style/Theme.Translucent" />
-        <activity
-            android:name=".JokeActivity"
-            android:label="@string/title_activity_joke"
-            android:parentActivityName=".MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.udacity.gradle.builditbigger.MainActivity" />
-        </activity>
     </application>
 
 </manifest>

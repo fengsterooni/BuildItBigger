@@ -10,9 +10,10 @@ import android.view.View;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
 import com.google.android.gms.ads.doubleclick.PublisherInterstitialAd;
+import com.udacity.gradle.jokeactivity.JokeActivity;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements EndpointsAsyncTask.OnTaskCompleted {
 
     PublisherInterstitialAd mPublisherInterstitialAd;
 
@@ -74,9 +75,14 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
-    public void showJoke() {
+    @Override
+    public void onTaskCompleted(String result) {
         Intent intent = new Intent(this, JokeActivity.class);
-        intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.joke));
+        intent.putExtra(Intent.EXTRA_TEXT, result);
         startActivity(intent);
+    }
+
+    public void showJoke() {
+        new EndpointsAsyncTask(this).execute();
     }
 }

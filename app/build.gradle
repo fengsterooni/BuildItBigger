@@ -36,11 +36,11 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.1'
     // Added for AdMob
-    compile 'com.google.android.gms:play-services:7.5.0'
+    freeCompile 'com.google.android.gms:play-services:7.5.0'
     // Added for Joke Java Library
     compile project(':javaJokes')
     // Added for Joke Activity (Android Library)
     compile project(':jokeactivity')
-    // Added for GCM support
+    // Added for GCE support
     compile project(path: ':backend', configuration: 'android-endpoints')
 }
