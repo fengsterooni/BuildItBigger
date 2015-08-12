@@ -1,9 +1,20 @@
-Build It Bigger Project
+Build It Bigger
 =============
 
-This is an Android application of "Build it Bigger"
+This project, **Build It Bigger**, is for [Udacity](www.udacity.com) [**"Android Developer Nanodegree"** program](https://www.udacity.com/course/android-developer-nanodegree--nd801).
 
-The project is for Udacity **"Android Developer Nanodegree"** program.
+### **_Introduction:_**
+
+This project creates an app with multiple flavors that uses multiple libraries and Google Cloud Endpoints.
+
+The finished app consists of four modules:
+
+* A Java library that provides jokes
+* A Google Cloud Endpoints (GCE) project that serves those jokes
+* An Android Library containing an activity for displaying jokes
+* An Android app that fetches jokes from the GCE module and passes them to the Android Library for display
+
+![alt text](https://github.com/fengsterooni/BuildItBigger/builditbigger.png "Build It Bigger")
 
 
 ##**_Completed user stories:_**
@@ -31,5 +42,3 @@ To receive "exceeds specifications", your app must fully implement all of the fo
 ##**_Screencast:_**
 
 ![screenshot](https://github.com/fengsterooni/BuildItBigger/blob/master/bigger.gif)
-
-
