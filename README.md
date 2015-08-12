@@ -14,7 +14,7 @@ The finished app consists of four modules:
 * An Android Library containing an activity for displaying jokes
 * An Android app that fetches jokes from the GCE module and passes them to the Android Library for display
 
-![alt text](https://github.com/fengsterooni/BuildItBigger/builditbigger.png "Build It Bigger")
+![alt text](https://github.com/fengsterooni/BuildItBigger/blob/master/builditbigger.png "Build It Bigger")
 
 
 ##**_Completed user stories:_**
