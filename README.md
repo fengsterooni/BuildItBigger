@@ -17,7 +17,7 @@ The finished app consists of four modules:
 ![alt text](https://github.com/fengsterooni/BuildItBigger/blob/master/builditbigger.png "Build It Bigger")
 
 
-##**_Completed user stories:_**
+### **_Completed user stories:_**
 
 #### Required Components
 
@@ -39,6 +39,6 @@ To receive "exceeds specifications", your app must fully implement all of the fo
 * The app displays a loading indicator while the joke is being fetched from the server.
 * The root build.gradle file contains a task that will start up the GCE development server, run all Android tests, then shutdown the development server.
 
-##**_Screencast:_**
+### **_Screencast:_**
 
 ![screenshot](https://github.com/fengsterooni/BuildItBigger/blob/master/bigger.gif)
